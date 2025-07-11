@@ -1,0 +1,6 @@
+pandas
+plotly
+streamlit
+yfinance
+py_lets_be_rational
+py_vollib
