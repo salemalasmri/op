@@ -57,9 +57,9 @@ with st_thread_context():
 
 # Initialize session state for colors if not already set
 if 'call_color' not in st.session_state:
-    st.session_state.call_color = '#00FF00'  # Default green for calls
+    st.session_state.call_color = '#2ECC71'  # A more vibrant green
 if 'put_color' not in st.session_state:
-    st.session_state.put_color = '#FF0000'   # Default red for puts
+    st.session_state.put_color = '#E74C3C'   # A strong red
 if 'vix_color' not in st.session_state:
     st.session_state.vix_color = '#800080'   # Default purple for VIX
 
