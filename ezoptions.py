@@ -1089,7 +1089,9 @@ def create_oi_volume_charts(calls, puts, S):
                 x=net_oi.index,
                 y=net_oi.values,
                 name='Net OI',
-                marker_color=[call_color if val >= 0 else put_color for val in net_oi.values]
+                marker_color=[call_color if val >= 0 else put_color for val in net_oi.values],
+                text=[f'{val:,.0f}' for val in net_oi.values],
+                textposition='auto'
             ))
         elif st.session_state.chart_type == 'Horizontal Bar':
             fig_oi.add_trace(go.Bar(
@@ -1097,7 +1099,9 @@ def create_oi_volume_charts(calls, puts, S):
                 x=net_oi.values,
                 name='Net OI',
                 marker_color=[call_color if val >= 0 else put_color for val in net_oi.values],
-                orientation='h'
+                orientation='h',
+                text=[f'{val:,.0f}' for val in net_oi.values],
+                textposition='auto'
             ))
         elif st.session_state.chart_type in ['Scatter', 'Line']:
             positive_mask = net_oi.values >= 0
@@ -1336,7 +1340,9 @@ def create_oi_volume_charts(calls, puts, S):
                 x=net_volume.index,
                 y=net_volume.values,
                 name='Net Volume',
-                marker_color=[call_color if val >= 0 else put_color for val in net_volume.values]
+                marker_color=[call_color if val >= 0 else put_color for val in net_volume.values],
+                text=[f'{val:,.0f}' for val in net_volume.values],
+                textposition='auto'
             ))
         elif st.session_state.chart_type == 'Horizontal Bar':
             fig_volume.add_trace(go.Bar(
@@ -1344,7 +1350,9 @@ def create_oi_volume_charts(calls, puts, S):
                 x=net_volume.values,
                 name='Net Volume',
                 marker_color=[call_color if val >= 0 else put_color for val in net_volume.values],
-                orientation='h'
+                orientation='h',
+                text=[f'{val:,.0f}' for val in net_volume.values],
+                textposition='auto'
             ))
         elif st.session_state.chart_type in ['Scatter', 'Line']:
             positive_mask = net_volume.values >= 0
@@ -2756,7 +2764,9 @@ def create_exposure_bar_chart(calls, puts, exposure_type, title, S):
                 x=net_exposure.index,
                 y=net_exposure.values,
                 name='Net',
-                marker_color=[call_color if val >= 0 else put_color for val in net_exposure.values]
+                marker_color=[call_color if val >= 0 else put_color for val in net_exposure.values],
+                text=[f'{val:,.0f}' for val in net_exposure.values],
+                textposition='auto'
             ))
         elif st.session_state.chart_type == 'Horizontal Bar':
             fig.add_trace(go.Bar(
@@ -2764,7 +2774,9 @@ def create_exposure_bar_chart(calls, puts, exposure_type, title, S):
                 x=net_exposure.values,
                 name='Net',
                 marker_color=[call_color if val >= 0 else put_color for val in net_exposure.values],
-                orientation='h'
+                orientation='h',
+                text=[f'{val:,.0f}' for val in net_exposure.values],
+                textposition='auto'
             ))
         elif st.session_state.chart_type in ['Scatter', 'Line']:
             positive_mask = net_exposure.values >= 0
@@ -3300,7 +3312,9 @@ def create_davi_chart(calls, puts, S):
                 x=net_davi.index,
                 y=net_davi.values,
                 name='Net',
-                marker_color=[call_color if val >= 0 else put_color for val in net_davi.values]
+                marker_color=[call_color if val >= 0 else put_color for val in net_davi.values],
+                text=[f'{val:,.0f}' for val in net_davi.values],
+                textposition='auto'
             ))
         elif st.session_state.chart_type == 'Horizontal Bar':
             fig.add_trace(go.Bar(
@@ -3308,7 +3322,9 @@ def create_davi_chart(calls, puts, S):
                 x=net_davi.values,
                 name='Net',
                 marker_color=[call_color if val >= 0 else put_color for val in net_davi.values],
-                orientation='h'
+                orientation='h',
+                text=[f'{val:,.0f}' for val in net_davi.values],
+                textposition='auto'
             ))
         elif st.session_state.chart_type in ['Scatter', 'Line']:
             positive_mask = net_davi.values >= 0
